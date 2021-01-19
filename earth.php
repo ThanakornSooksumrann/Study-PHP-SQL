@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo "Earth";?>
+    <?php echo "Earth Hello";?>
 </body>
 </html>
