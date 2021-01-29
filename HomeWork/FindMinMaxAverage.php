@@ -35,13 +35,16 @@
             $num3 = $_POST['Num3'];
             $op = $_POST['operator'];
             if($op == "ma"){
-                echo ("Maximum number = ".max($num1,$num2,$num3));
+                $sum = max($num1,$num2,$num3);
+                echo ("Maximum number = ".number_format($sum));
             }
             elseif($op == "mi"){
-                echo ("Minimum number = ".min($num1,$num2,$num3));
+                $sum = min($num1,$num2,$num3);
+                echo ("Minimum number = ".number_format($sum));
             }
             elseif($op == "av"){
-                echo ("Average number = ".(($num1+$num2+$num3)/3));
+                $sum = (($num1+$num2+$num3)/3);
+                echo ("Average number = ".number_format($sum));
             }
         ?>
         </Font>
