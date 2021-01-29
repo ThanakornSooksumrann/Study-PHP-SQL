@@ -13,6 +13,7 @@
     </head>
     <body>
     <center>
+        <Font Face="RSU">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <h1 align="center">HW1:Find Min Max Average</h1>
                 <label for="Num1">Num1:</label>
@@ -43,6 +44,7 @@
                 echo ("Average number = ".(($num1+$num2+$num3)/3));
             }
         ?>
+        </Font>
     </center>
     </body>
 </html>
