@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo "Hello";?>
+    <?php echo "Hello earth มหมีหน้าหี";?>
 </body>
 </html>

@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <?php
-            $number1 = $_GET['number1'];
-            $number2 = $_GET['number2'];
-            $operator = $_GET['operator'];
-            echo "<table align='center' width='40%' border='1'>";
-            echo "<tr><td colspan='2' align='center'><b>Data for Input</b></td></tr>";
-            echo "<tr><td>Number 1 :</td><td> <i> $number1 </i> </td></tr>";
-            echo "<tr><td>Number 2 :</td><td> <i> $number2 </i> </td></tr>";
-            echo "<tr><td>Operator :</td><td> <i> $operator </i> </td></tr>";
-            echo "<tr><td>Result :</td><td> <i> ";
-            if ($operator == "+")
-                echo ($number1 + $number2) ." </i> </td></tr>";
-            if ($operator == "-")
-                echo ($number1 - $number2) ." </i> </td></tr>";
-            if ($operator == "*")
-                echo ($number1 * $number2) ." </i> </td></tr>";
-            if ($operator == "/")
-                echo ($number1 / $number2) ." </i> </td></tr>";
-            if ($operator == "%")
-                echo ($number1 % $number2) ." </i> </td></tr>";
-            echo "</table>"
-        ?>
-        <a href="lab5-9.php"> Back </a>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 80px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <Font Face="RSU">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <h1 align="center">HW2 : Sum of number</h1><br>
+            <label>Num1:</label>
+            <input type="number" name="Num1" style="width: 20%;" required><br>
+            <input type="radio" name="op1" value="+" required> + 
+            <input type="radio" name="op1" value="-"> -
+            <input type="radio" name="op1" value="*"> *
+            <input type="radio" name="op1" value="/"> / <br>
+            <label>Num2:</label>
+            <input type="number" name="Num2" style="width: 20%;" required><br>
+            <input type="radio" name="op2" value="+" required> + 
+            <input type="radio" name="op2" value="-"> -
+            <input type="radio" name="op2" value="*"> *
+            <input type="radio" name="op2" value="/"> / <br>
+            <label>Num3:</label>
+            <input type="number" name="Num3" style="width: 20%;" required><br><br>
+            <input name="btnSubmit" type="submit" value="Submit">
+            <button type="reset">clear</button>
+            </form><br>
+            <?php
+                $num1 = $_POST['Num1'];
+                $num2 = $_POST['Num2'];
+                $num3 = $_POST['Num3'];
+                $op1 = $_POST['op1'];
+                $op2 = $_POST['op2'];
+                $sum = 0;
+                function check_sum()
+                {
+                    global $num2;
+                    global $sum;
+                    if ($sum == '') $sum = $num2;
+                }   
+                if ($op1 == "*" || $op1 == "/" || $op2 == "*" || $op2 == "/") {
+                    if ($op1 == "*") {
+                        check_sum();
+                        $sum = $num1 * $sum;
+                    }
+                    if ($op1 == "/") {
+                        check_sum();
+                        $sum = $num1 / $sum;
+                    }
+                    if ($op2 == "*") {
+                        check_sum();
+                        $sum = $sum * $num3;
+                    }
+                    if ($op2 == "/") {
+                        check_sum();
+                        $sum = $sum / $num3;
+                    }
+                }
+                if ($op1 == "+" || $op1 == "-" || $op2 == "+" || $op2 == "-") {
+                    if ($op1 == "+") {
+                        check_sum();
+                        $sum = $num1 + $sum;
+                    }
+                    if ($op1 == "-") {
+                        check_sum();
+                        $sum = $num1 - $sum;
+                    }
+                    if ($op2 == "+") {
+                        check_sum();
+                        $sum = $sum + $num3;
+                    }
+                    if ($op2 == "-") {
+                        check_sum();
+                        $sum = $sum - $num3;
+                    }
+                }
+                echo ("Sum of number = ".$sum);
+            ?>
+        </Font>
+    </center>
+</body>
 </html>

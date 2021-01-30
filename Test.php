@@ -1,68 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>HW1</title>
-
-    <style>
-    body {
-        margin: 80px;
-        padding: 20px;
-    }
-    </style>
-
-    <?php
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
-            $sum = '';
-            $num1 = $_POST['num1'];
-            $num2 = $_POST['num2'];
-            $num3 = $_POST['num3'];
-            if(!empty($_POST['choice'])){
-                switch ($_POST['choice']) {
-                case 'Minnimum':
-                    $sum = min($num1,$num2,$num3);
-                    break;
-                case 'Maximum':
-                    $sum = max($num1,$num2,$num3);
-                    break;
-                case 'Average':
-                    $sum = ($num1 + $num2 + $num3)/3;
-                    break;
-                }
-            }
-        }
-    ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
-<!-- Main -->
-
 <body>
-    <center>
-        <div>
-            <h1>HW1: Find Min Max Average</h1>
-        </div>
-        <div>
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-                <label>Num 1: </label>
-                <input type="number" name="num1" style="width: 20%;" required>
-                <br><br><label>Num 2: </label>
-                <input type="number" name="num2" style="width: 20%;" required>
-                <br><br><label>Num 3: </label>
-                <input type="number" name="num3" style="width: 20%;" required>
-                <br><br><input type="radio" name="choice" value="Minnimum" required>Minnimum
-                <input type="radio" name="choice" value="Maximum">Maximum
-                <input type="radio" name="choice" value="Average">Average
-                <br><br><button type="submit">Submit</button>
-                <button type="reset">Clear</button>
-            </form>
-        </div>
-        <br><br>
-        <?php 
-        if($_SERVER['REQUEST_METHOD'] == "POST") {
-            echo $_POST['choice']." number = $sum";
-        }
-        ?>
-    </center>
+<form method="post" action="">
+<input type="text" name="Number" pattern="[0-9]{1,}" title="กรอกตัวเลขเท่านั้น" required>
+<br/>
+<pattern="[A-Za-zก-ฮ]{1,}" title="กรอกตัวอักษรเท่านั้น" required>
+<br/>
+<input type="submit">
+</form>
 </body>
-
 </html>
