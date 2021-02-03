@@ -17,14 +17,16 @@
 <body>
     <center>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <
         <label>Number:</label>
-        <input type="number" name="number">
+        <input type="number" name="number" value="0">
         <input name="submit" type="submit" class="button2" value="ส่งค่า">
       </form>
       <?php
+        @$num =0;
         $num = $_POST['number'];
         $z = 0;
+        $odd = 0;
+        $eve = 0;
         for ($i = 0 ; $i < strlen($num) ; $i++) {
           if($num[$i] != 0) {
             ($num[$i] % 2 == 0) ? $eve += 1 : $odd += 1;
