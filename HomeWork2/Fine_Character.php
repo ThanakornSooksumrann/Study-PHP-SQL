@@ -26,8 +26,7 @@
         echo '<center><div>';
         if (isset($_POST['submit'])){
             $Text = $_POST['Text'];
-            $newText = str_replace($array, '', $Text);
-            foreach (count_chars($newText, 1) as $i => $val) {
+            foreach (count_chars($Text, 1) as $i => $val) {
                 if(chr($i) == ' '){
                     echo "Space = ".$val." , ";
                 }
