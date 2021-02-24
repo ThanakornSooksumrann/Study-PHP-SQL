@@ -19,6 +19,9 @@
             <label>ขนาดรูป 100 - 500px :</label>
             <input type="number" name="wid" max="500" min="100" required><br>
             กิโลผลไม้<br>
+            ทับทิมโลละ 100 บาท<br>
+            กล้วยโลละ 200 บาท<br>
+            ส้มโลละ 300 บาท<br>
             <input type="radio" id="k1" name="kg" value="1">
             <label for="k1">1 kg</label><br>
             <input type="radio" id="k2" name="kg" value="2">
