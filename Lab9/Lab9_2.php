@@ -47,7 +47,7 @@ elseif ($score[$n] >= 65) {
     echo "C+";
 }
 elseif ($score[$n] >= 60) {
-    $cscore2[4]++;
+    $score2[4]++;
     echo "C";
 }
 elseif ($score[$n] >= 55) {
