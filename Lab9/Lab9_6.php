@@ -38,7 +38,7 @@
         echo "<td width='50' align='center'>" . $row[$r]. "</td>";
         echo "</tr>";
     }
-    echo '<tr>';
+    echo '<tr align="center">';
     echo '<td>รวม</td>'; 
     for($r = 4; $r >= 1; $r--){
         echo '<td>',$col[$r],'</td>'; 
