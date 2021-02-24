@@ -32,7 +32,7 @@
         echo "<tr>";
         for ($c = 0; $c < $maxCol; $c++) {
             $sum += $row[$r] += $month[$r][$c+1];
-            $col[$c] += $month[$c][$r+1];
+            $col[$c] += $month[$c+1][$r];
             echo "<td width='50' align='center'>" . $month[$r][$c] . "</td>";
         }
         echo "<td width='50' align='center'>" . $row[$r]. "</td>";
@@ -40,7 +40,7 @@
     }
     echo '<tr align="center">';
     echo '<td>รวม</td>'; 
-    for($r = 4; $r >= 1; $r--){
+    for($r = 0; $r < 4; $r++){
         echo '<td>',$col[$r],'</td>'; 
         $sum += $col[$r];
     }
