@@ -17,7 +17,7 @@
     $vat = array("2.00", "2.00", "4.00", "4.00");
     ?>
     <div class="header">
-        <center><img src="pic/header.jpg" width="60%" height="300px"></center>
+        <center><img src="pic/header(1).jpg" width="60%" height="300px"></center>
     </div>
     <center>
         <div style="width: 60%;">

@@ -42,23 +42,23 @@
             <?php if ($car == "Accord") : ?>
                 <?php $price = 1799000;
                 $year = 2; ?>
-                <img src="Pic/logo-accord.png" class="logo"><br>
-                <img src="Pic/Accord.png" class="carpic">
+                <img src="Pic/logo-accord.png"><br>
+                <img src="Pic/Accord.png">
             <?php elseif ($car == "Civic") : ?>
                 <?php $price = 1145000;
                 $year = 2; ?>
-                <img src="Pic/logo-civic.png" class="logo"><br>
-                <img src="Pic/Civic.png" class="carpic">
+                <img src="Pic/logo-civic.png"><br>
+                <img src="Pic/Civic.png">
             <?php elseif ($car == "Jazz") : ?>
                 <?php $price = 754000;
                 $year = 4; ?>
-                <img src="Pic/logo-jazz.png" class="logo"><br>
-                <img src="Pic/Jazz.png" class="carpic">
+                <img src="Pic/logo-jazz.png" ><br>
+                <img src="Pic/Jazz.png">
             <?php elseif ($car == "City") : ?>
                 <?php $price = 749000;
                 $year = 4; ?>
-                <img src="Pic/logo-city.png" class="logo"><br>
-                <img src="Pic/City.png" class="carpic">
+                <img src="Pic/logo-city.png"><br>
+                <img src="Pic/City.png">
             <?php endif ?>
         </center>
     </div>

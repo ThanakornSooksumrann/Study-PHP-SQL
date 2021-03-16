@@ -1,6 +1,6 @@
-font{
+body{
     color: black;
-    font-family: "TH Sarabun New";
+    font-family: TH Sarabun New;
 }
 
 .header{
@@ -19,10 +19,4 @@ font{
     float: left;
     width: 50%;
     height: 500px;
-}
-
-.footer{
-    background-color: darkblue;
-    height: 200px;
-    clear: both;
 }
