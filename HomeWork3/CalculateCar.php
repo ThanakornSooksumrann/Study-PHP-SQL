@@ -63,7 +63,6 @@
         </center>
     </div>
     <div class="ri">
-
         <form action="CalculateCar.php" method="POST">
             <fieldset>
                 <legend>เลือกเงินดาวน์</legend>
