@@ -21,7 +21,7 @@
 
     $sqltxt = mysqli_query($conn, "SELECT * FROM book order by BookID")
         or die(mysqli_error($conn));
-    echo "<CENTER><H1>Admin:".$_SESSION["name"]."</H1></CENTER>";
+    echo "<CENTER><H1>".$_SESSION["name"]."</H1></CENTER>";
     echo "<CENTER><H3>รายชื่อหนังสือ</H3></CENTER>";
     echo "<table width=\"400\" border=\"0\" bordercolor=\"D1D7DA\" ";
     echo "align = \"center\" valign = \"top\" >";
