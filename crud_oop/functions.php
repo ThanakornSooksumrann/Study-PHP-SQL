@@ -41,5 +41,10 @@
             ");
             return $result;
         }
+
+        public function delete($userid) {
+            $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tbluser WHERE id = '$userid'");
+            return $deleterecord;
+        }
     }
 ?>
