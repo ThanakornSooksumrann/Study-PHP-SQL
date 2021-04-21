@@ -13,6 +13,7 @@
     <div class="container">
         <h1 class="my=5">Information Page</h1>
     </div>
+    <a href="insert.php" class="btn btn-success">Go to insert</a><br>
     <table id="mytable" class="table table-bordered table=striped">
         <thead>
             <th>#</th>

@@ -1,3 +1,26 @@
+<?php 
+    include_once('functions.php');
+
+    $insertdata = new DB_con();
+
+    if (isset($_POST['insert'])) {
+        $fname = $_POST['firstname'];
+        $lname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phonenumber'];
+        $address = $_POST['address'];
+
+        $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address);
+
+        if ($sql) {
+            echo "<script>alert('Record Inserted Successfully!');</script>";
+            echo "<script>window.location.href='index.php'</script>";
+        } else {
+            echo "<script>alert('Something went wrong! Please try again!');</script>";
+            echo "<script>window.location.href='insert.php'</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
