@@ -24,5 +24,22 @@
             $result = mysqli_query($this->dbcon, "SELECT * FROM tbluser");
             return $result;
         }
+
+        public function fetchonerecord($userid) {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tbluser WHERE id = '$userid'");
+            return $result;
+        }
+
+        public function update($firstname, $lastname, $email, $phonenumber, $address, $userid){
+            $result = mysqli_query($this->dbcon, "UPDATE tbluser SET
+                firstname = '$firstname',
+                lastname = '$lastname',
+                email = '$email',
+                phonenumber = '$phonenumber',
+                address = '$address'
+                WHERE id = '$userid'
+            ");
+            return $result;
+        }
     }
 ?>
