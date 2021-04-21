@@ -1,3 +1,25 @@
+<?php
+    include_once('functions.php');
+
+    $updatedata = new DB_con();
+
+    if(isset($_POST['update'])) {
+        $fname = $_POST['firstname'];
+        $lname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phonenumber'];
+        $address = $_POST['address'];
+
+        $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address, $userid);
+        if ($sql) {
+            echo "<script>alert('Update Successfully!');</script>";
+            echo "<script>window.location.href='index.php'</script>";
+        } else {
+            echo "<script>alert('Something went wrong! Please try again!');</script>";
+            echo "<script>window.location.href='update.php'</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +33,14 @@
 </head>
 <body>
     <div class="container">
+        <a href="index.php" class="btn btn-primary mt-3">GO Back</a>
+        <hr>
         <h1 class="mt-5">Update Page</h1>
         <hr>
         <?php
-            $user = $_GET['id'];
-            $updateusre = new DB_con();
+
+            $userid = $_GET['id'];
+            $updateuser = new DB_con();
             $sql = $updateuser->fetchonerecord($userid);
             while($row = mysqli_fetch_array($sql)) {
         ?>
@@ -41,7 +66,7 @@
                     <textarea name="address" cols="30" rows="10" class="form-control" required><?php echo $row['address']; ?></textarea>
                 </div>
                 <?php } ?>
-                <button type="submit" name="insert" class="btn btn-success">Insert</button>
+                <button type="submit" name="update" class="btn btn-success">Update</button>
         </form>
     </div>
 
