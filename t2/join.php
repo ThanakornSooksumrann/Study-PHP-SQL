@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     require('query.php');
     $load = new query();
     $sql = $load->joinTable();
@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mt-5" >
+            <div class="col-12 text-center mt-5">
                 <h1>
                     Show Data
                 </h1>
@@ -54,6 +54,7 @@
                 </table>
                 
                 
+
             </div>
         </div>
     </div>
