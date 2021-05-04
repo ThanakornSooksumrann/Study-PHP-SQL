@@ -1,7 +1,7 @@
 <?php
     define('HOST','localhost');
-    define('USER','maple');
-    define('PASS','26012544');
+    define('USER','root');
+    define('PASS','12345');
     define('DB_NAME','product');
 
     class query{
@@ -23,6 +23,15 @@
                 $result = mysqli_query($this->con,$sql);
                 return $result;
             }
+        }
+
+        //adduser
+        public function adduser($username, $password, $status)
+        {
+            $sql = "INSERT INTO member (username, password, status) 
+            VALUES ('$username', '$password', '$status')";
+            $result = mysqli_query($this->con,$sql);
+            return $result;
         }
 
         // READ
@@ -62,6 +71,33 @@
             $result = mysqli_query($this->con , $sql);
             return $result;
         }
-    }
 
+        public function login($username , $password)
+        {
+            $sql = "SELECT * FROM member WHERE username ='$username'";
+            $result = mysqli_query($this->con , $sql);
+
+            if($result->num_rows > 0){
+                $user = $result->fetch_assoc();
+
+            if ($user['password']== $password){
+                return array('m_id'=>$user['m_id'] , 'status'=>$user['status']  );
+            }
+            else {
+                return 'รหัสผิด';
+            }
+            
+            }
+            else{
+                return 'ไม่พบผู้ใช้';
+            }
+
+        }
+
+        public function joinTable(){
+            $sql = "SELECT * FROM card INNER JOIN member ON card.m_id = member.m_id";
+            $result = mysqli_query($this->con , $sql);
+            return $result;
+        }
+    }
 ?>
