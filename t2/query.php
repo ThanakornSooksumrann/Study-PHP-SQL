@@ -16,7 +16,6 @@
         }
         public function create($p_name,$p_des,$p_amount,$p_price,$pic)
         {
-            
             if(move_uploaded_file($pic['tmp_name'],'uploads/'.$pic['name'])){
                 $sql = "INSERT INTO product (p_name,p_des,p_amount,p_price,p_pic) 
                 VALUES ('$p_name','$p_des',$p_amount,$p_price,'".$pic['name']."')";
@@ -97,6 +96,7 @@
                 return 'ชื่อผู้ใช้ซ้ำ กรุณาใช้ชื่อผู้ใช้อื่น';
             }
         }
+
 
         public function joinTable()
         {
