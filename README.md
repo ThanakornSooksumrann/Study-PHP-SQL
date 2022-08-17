@@ -1,2 +1,1 @@
-# WebProPHP
-Study PHP
+# Study PHP and SQL
